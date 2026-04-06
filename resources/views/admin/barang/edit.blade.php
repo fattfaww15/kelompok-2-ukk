@@ -13,7 +13,12 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Kategori</label>
-                <input type="text" name="kategori" value="{{ old('kategori', $barang->kategori) }}" class="form-control" required>
+                <select name="kategori" class="form-select" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="makanan" {{ old('kategori', $barang->kategori) == 'makanan' ? 'selected' : '' }}>Makanan</option>
+                    <option value="kosmetik" {{ old('kategori', $barang->kategori) == 'kosmetik' ? 'selected' : '' }}>Kosmetik</option>
+                    <option value="aksesoris" {{ old('kategori', $barang->kategori) == 'aksesoris' ? 'selected' : '' }}>Aksesoris</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Nama Barang</label>

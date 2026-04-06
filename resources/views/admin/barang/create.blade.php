@@ -12,7 +12,12 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Kategori</label>
-                <input type="text" name="kategori" value="{{ old('kategori') }}" class="form-control" required>
+                <select name="kategori" class="form-control" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Makanan" {{ old('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
+                    <option value="Kosmetik" {{ old('kategori') == 'Kosmetik' ? 'selected' : '' }}>Kosmetik</option>
+                    <option value="Aksesoris" {{ old('kategori') == 'Aksesoris' ? 'selected' : '' }}>Aksesoris</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Nama Barang</label>
